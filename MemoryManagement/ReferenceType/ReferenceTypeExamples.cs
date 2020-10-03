@@ -31,11 +31,11 @@ namespace MemoryManagement.ReferenceType
             Console.WriteLine();
 
             var person2 = person;
-            Console.WriteLine($"person: {person}");
-            Console.WriteLine($"person2: {person2}");
+            Console.WriteLine($"\tperson: {person}");
+            Console.WriteLine($"\tperson2: {person2}");
             person2.Email = "aaa@aaa.aaa";
-            Console.WriteLine($"person: {person}");
-            Console.WriteLine($"person2: {person2}");
+            Console.WriteLine($"\tperson: {person}");
+            Console.WriteLine($"\tperson2: {person2}");
             // When a Reference type variable is assigned to another, the data itself is not copied, only the address in memory.
             // So, the two Reference type variables hold references to the same object.
         }
@@ -44,9 +44,9 @@ namespace MemoryManagement.ReferenceType
         {
             Console.WriteLine("ReferenceTypeExamples - PassingParametersByValue");
             var person = new Person("aaa@aaa.com", false);
-            Console.WriteLine($"person: {person}");
+            Console.WriteLine($"\tperson: {person}");
             TurnEighteen(person);
-            Console.WriteLine($"person: {person}");
+            Console.WriteLine($"\tperson: {person}");
             // What happens in this case is that the person variable doesn't store the person itself, it stores
             // a reference to it. This way, the person parameter of the TurnEighteen method receives a copy of the
             // address for the Person object. So, both the local person variable and the parameter person point to
@@ -58,11 +58,11 @@ namespace MemoryManagement.ReferenceType
         {
             Console.WriteLine("ReferenceTypeExamples - PassingParametersByReference");
             var person = new Person("eu@opa.com", false);
-            Console.WriteLine($"person: {person}");
+            Console.WriteLine($"\tperson: {person}");
             TurnEighteenByRef(ref person);
             if (!(person is null))
             {
-                Console.WriteLine($"person: {person}");
+                Console.WriteLine($"\tperson: {person}");
             }
             else
             {
@@ -74,25 +74,25 @@ namespace MemoryManagement.ReferenceType
 
             Console.WriteLine();
             GetAnEmailByOut(out person); // I know it is null but out parameters don't need to be initialized.
-            Console.WriteLine($"person: {person}");
+            Console.WriteLine($"\tperson: {person}");
 
             Console.WriteLine();
             TurnEighteenByIn(person); // in keyword is optional here
-            Console.WriteLine($"person: {person}");
+            Console.WriteLine($"\tperson: {person}");
         }
 
         private static void TurnEighteen(Person person)
         {
-            Console.WriteLine($"TurnEighteen - person: {person}");
+            Console.WriteLine($"\tTurnEighteen - person: {person}");
             person.IsOldEnoughToDrink = true;
-            Console.WriteLine($"TurnEighteen - person: {person}");
+            Console.WriteLine($"\tTurnEighteen - person: {person}");
         }
 
         private static void TurnEighteenByRef(ref Person person)
         {
-            Console.WriteLine($"TurnEighteenByRef - person: {person}");
+            Console.WriteLine($"\tTurnEighteenByRef - person: {person}");
             person.IsOldEnoughToDrink = true;
-            Console.WriteLine($"TurnEighteenByRef - person: {person}");
+            Console.WriteLine($"\tTurnEighteenByRef - person: {person}");
             person = null;
         }
 
@@ -100,17 +100,17 @@ namespace MemoryManagement.ReferenceType
         {
             person = new Person();
             person.Email = "anemail@aaa.net";
-            Console.WriteLine($"GetAnEmailByOut - person: {person}");
+            Console.WriteLine($"\tGetAnEmailByOut - person: {person}");
         }
 
         private static void TurnEighteenByIn(in Person person)
         {
-            Console.WriteLine($"TurnEighteenByIn - person: {person}");
+            Console.WriteLine($"\tTurnEighteenByIn - person: {person}");
             var newPerson = new Person(person.Email, person.IsOldEnoughToDrink);
-            Console.WriteLine($"TurnEighteenByIn - newPerson: {newPerson}");
+            Console.WriteLine($"\tTurnEighteenByIn - newPerson: {newPerson}");
             newPerson.IsOldEnoughToDrink = true;
-            Console.WriteLine($"TurnEighteenByIn - person: {person}");
-            Console.WriteLine($"TurnEighteenByIn - newPerson: {newPerson}");
+            Console.WriteLine($"\tTurnEighteenByIn - person: {person}");
+            Console.WriteLine($"\tTurnEighteenByIn - newPerson: {newPerson}");
         }
     }
 }
