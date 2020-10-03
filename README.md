@@ -1,6 +1,6 @@
 # C# Memory Management
 
-Just a simple .NET Core project to show how C# Memory Management works.
+This is a .NET Core project I created to explain how memory management works in C#. It has code examples as well as comments that explain what is happening.
 
 # References
 
