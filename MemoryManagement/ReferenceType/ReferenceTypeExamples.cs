@@ -39,5 +39,25 @@ namespace MemoryManagement.ReferenceType
             // When a Reference type variable is assigned to another, the data itself is not copied, only the address in memory.
             // So, the two Reference type variables hold references to the same object.
         }
+
+        public static void PassingParametersByValue()
+        {
+            var person = new Person("aaa@aaa.com", false);
+            Console.WriteLine($"person: {person}");
+            TurnEighteen(person);
+            Console.WriteLine($"person: {person}");
+            // What happens in this case is that the person variable doesn't store the person itself, it stores
+            // a reference to it. This way, the person parameter of the TurnEighteen method receives a copy of the
+            // address for the Person object. So, both the local person variable and the parameter person point to
+            // the same object in the heap. That's why, even though the parameter is passed by value, the method is
+            // still able to change the same object that the local variable references.
+        }
+
+        private static void TurnEighteen(Person person)
+        {
+            Console.WriteLine($"TurnEighteen - person: {person}");
+            person.IsOldEnoughToDrink = true;
+            Console.WriteLine($"TurnEighteen - person: {person}");
+        }
     }
 }
