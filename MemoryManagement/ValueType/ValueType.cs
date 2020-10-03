@@ -41,17 +41,20 @@ namespace MemoryManagement.ValueType
         {
             Console.WriteLine($"ValueTypeExamples: PassingParametersByReference");
             var number = 7d;
+            // Must be initialized.
             Console.WriteLine($"number: {number}");
             SquareByRef(ref number);
             Console.WriteLine($"number: {number}");
 
             Console.WriteLine();
+            // It could be initialized but it wouldn't make any difference.
             GetPiOut(out var pi);
             Console.WriteLine($"pi: {pi}");
 
             Console.WriteLine();
             number = 7d;
             Console.WriteLine($"number: {number}");
+            // The value cannot be altered by the method.
             SquareByIn(in number); // in keyword is optional here
             Console.WriteLine($"number: {number}");
         }
