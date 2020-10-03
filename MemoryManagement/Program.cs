@@ -1,5 +1,6 @@
 ﻿using System;
 using MemoryManagement.ValueType;
+using MemoryManagement.ReferenceType;
 
 namespace MemoryManagement
 {
@@ -10,6 +11,7 @@ namespace MemoryManagement
             Console.WriteLine();
             ValueTypeExamples.Copying();
             Console.WriteLine();
+            ReferenceTypeExamples.Copying();
         }
     }
 }

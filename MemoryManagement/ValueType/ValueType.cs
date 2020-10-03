@@ -7,7 +7,8 @@ namespace MemoryManagement.ValueType
         public static void Copying()
         {
             Console.WriteLine("ValueTypeExamples - Copying");
-            // Value types (also known as primitive types) holds its own data.
+            // Value types (also known as primitive types) holds its own data. They are usually stored in the stack.
+            // Except when they are instance variables of a class.
             // These are value types: int, long, uint, ulong, ushort, double, float, decimal, enum and struct.
 
             //When you assign a value type variable to another, the value is copied directly.
