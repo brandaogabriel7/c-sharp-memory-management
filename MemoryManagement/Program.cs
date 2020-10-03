@@ -1,4 +1,5 @@
 ﻿using System;
+using MemoryManagement.ValueType;
 
 namespace MemoryManagement
 {
@@ -6,7 +7,9 @@ namespace MemoryManagement
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine();
+            ValueTypeExamples.Copying();
+            Console.WriteLine();
         }
     }
 }
