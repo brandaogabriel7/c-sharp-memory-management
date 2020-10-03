@@ -12,6 +12,10 @@ namespace MemoryManagement
             ValueTypeExamples.Copying();
             Console.WriteLine();
             ReferenceTypeExamples.Copying();
+            Console.WriteLine();
+            ValueTypeExamples.PassingParametersByValue();
+            Console.WriteLine();
+            ReferenceTypeExamples.PassingParametersByValue();
         }
     }
 }
