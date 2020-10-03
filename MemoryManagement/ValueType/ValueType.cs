@@ -37,11 +37,51 @@ namespace MemoryManagement.ValueType
             // so local number variable value doesn't change at all.
         }
 
+        public static void PassingParametersByReference()
+        {
+            Console.WriteLine($"ValueTypeExamples: PassingParametersByReference");
+            var number = 7d;
+            Console.WriteLine($"number: {number}");
+            SquareByRef(ref number);
+            Console.WriteLine($"number: {number}");
+
+            Console.WriteLine();
+            GetPiOut(out var pi);
+            Console.WriteLine($"pi: {pi}");
+
+            Console.WriteLine();
+            number = 7d;
+            Console.WriteLine($"number: {number}");
+            SquareByIn(in number); // in keyword is optional here
+            Console.WriteLine($"number: {number}");
+        }
+
         private static void Square(double number)
         {
             Console.WriteLine($"Square method - number: {number}");
             number = Math.Pow(number, 2);
             Console.WriteLine($"Square method - number: {number}");
+        }
+
+        private static void SquareByRef(ref double number)
+        {
+            Console.WriteLine($"SquareByRef method - number: {number}");
+            number = Math.Pow(number, 2);
+            Console.WriteLine($"SquareByRef method - number: {number}");
+        }
+
+        private static void SquareByIn(in double number)
+        {
+            Console.WriteLine($"SquareByRef method - number: {number}");
+            var newNumber = Math.Pow(number, 2);
+            Console.WriteLine($"SquareByRef method - number: {number}");
+            Console.WriteLine($"SquareByRef method - newNumber: {newNumber}");
+        }
+
+        private static void GetPiOut(out double pi)
+        {
+            pi = Math.PI;
+            Console.WriteLine($"GetPiOut method - pi: {pi}");
         }
     }
 }
