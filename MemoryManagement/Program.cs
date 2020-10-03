@@ -26,8 +26,8 @@ namespace MemoryManagement
             // (Why would we need in parameters? Performance reasons. I won't too much in depth here.)
             Console.WriteLine();
             ValueTypeExamples.PassingParametersByReference();
-            // Console.WriteLine();
-            // ReferenceTypeExamples.PassingParametersByReference();
+            Console.WriteLine();
+            ReferenceTypeExamples.PassingParametersByReference();
         }
     }
 }
